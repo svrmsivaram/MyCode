@@ -12,13 +12,13 @@ import weeklyHomeWork01.TestStep;
 
 public class PrintContryInIRCTC {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName("chrome");
 		dc.setPlatform(Platform.WINDOWS);
 		
 		TestStep ts= new TestStep();
-		ChromeDriver dr= ts.openChromeBrowser("https://www.irctc.co.in",dc);
+		ChromeDriver dr= (ChromeDriver) ts.openChromeBrowser("https://www.irctc.co.in",dc);
 		ts.clickbyLinkText(dr,"Sign up");
         Select se = new Select(dr.findElementById("userRegistrationForm:nationalityId"));
         List<WebElement> we = se.getOptions();

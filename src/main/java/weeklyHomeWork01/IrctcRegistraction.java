@@ -8,13 +8,13 @@ import weeklyHomeWork01.TestStep;
 
 public class IrctcRegistraction {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws Exception {
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName("chrome");
 		dc.setPlatform(Platform.WINDOWS);
 		
 		TestStep ts= new TestStep();
-		ChromeDriver dr= ts.openChromeBrowser("https://www.irctc.co.in",dc);
+		ChromeDriver dr= (ChromeDriver) ts.openChromeBrowser("https://www.irctc.co.in",dc);
 		ts.clickbyLinkText(dr,"Sign up");
 		ts.enterById(dr,"userRegistrationForm:userName","attestusr");
 		ts.enterById(dr,"userRegistrationForm:password","test@123");

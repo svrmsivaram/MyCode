@@ -5,18 +5,19 @@ import java.util.Set;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import weeklyHomeWork01.TestStep;
 
 public class WindowManagement {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		TestStep ts = new TestStep();
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName("chrome");
 		dc.setPlatform(Platform.WINDOWS);
 		
-		ChromeDriver dr = ts.openChromeBrowser("https://www.irctc.co.in",dc);
+		RemoteWebDriver dr = ts.openChromeBrowser("https://www.irctc.co.in",dc);
 		ts.clickbyLinkText(dr, "Contact Us");
 		Set<String> allwin = dr.getWindowHandles();
 		for (String ew : allwin) {

@@ -6,6 +6,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import weeklyHomeWork01.TestStep;
@@ -18,7 +19,7 @@ public class SelectDropDownValue {
 		dc.setPlatform(Platform.WINDOWS);
 		
 		TestStep ts = new TestStep();
-		ChromeDriver dr =ts.openChromeBrowser("http://testleaf.herokuapp.com/pages/Dropdown.html",dc);
+		RemoteWebDriver dr =ts.openChromeBrowser("http://testleaf.herokuapp.com/pages/Dropdown.html",dc);
 		
 		Select se = new Select(dr.findElementById("dropdown1"));
 		List<WebElement> wb = se.getOptions();
